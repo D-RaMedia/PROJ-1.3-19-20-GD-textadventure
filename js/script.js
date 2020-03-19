@@ -5,6 +5,7 @@ const feedback = document.getElementById('feedback');
 const imageLocation = document.getElementById('imageLocation');
 const myDescription = document.getElementById('description');
 const myInventory = document.getElementById('inventory');
+const myTreasure = document.getElementById('treasure');
 
 let currentLocation = 4;
 
@@ -51,6 +52,16 @@ descriptions[5] = "u staat in het medialab. Hier kan geexperimenteerd worden met
 descriptions[6] = "u staat bij de toiletten";
 descriptions[7] = "u staat in een klaslokaal. De tafels staan recht achter elkaar en voorin is een projector en een smartboard";
 descriptions[8] = "u staat in het examenlokaal. Hier zijn de vierdejaars studenten bezig met het voorbereiden van hun examen";
+
+treasures = [];
+treasures[3] = "Quack le duck";
+treasures[5] = "you've found a pokeball";
+treasures[7] = "Some gold!";
+
+treasureImage = [];
+treasureImage[3] = "duck.jpg"
+treasureImage[5] = "pokeball.png"
+treasureImage[7] = "gold.png";
 
 myInput.addEventListener('keydown', getInput, false);
 
@@ -103,19 +114,35 @@ function getInput(evt) {
 }
 
 function giveLocation() {
-  divLocation.innerHTML = locations[currentLocation];
+  divLocation.innerHTML = locations[currentLocation] + " => grid " + currentLocation;
   myDescription.innerHTML = descriptions[currentLocation];
   imageLocation.src = "media/" + images[currentLocation];
   myDirections = "mogelijke richtingen zijn: ";
   for (let i = 0; i < directions[currentLocation].length; i++) {
     myDirections += "<li>" + directions[currentLocation][i] + "</li>";
   }
+  myDirections += showTreasure(currentLocation);
   myPossibilities.innerHTML = myDirections;
   myInventory.innerHTML = "uw inventory is leeg";
 }
 
 function removeFeedback() {
   feedback.innerHTML = "";
+}
+
+function showTreasure(currentLocation){
+  if(typeof treasures[currentLocation] != "undefined"){
+
+
+  console.log(treasures[currentLocation]);
+  treasure.src = "treasure/" + treasureImage[currentLocation];
+  let treasureText = "Er zit een treasure in de kamer: " + treasures[currentLocation];
+  return treasureText;
+  }
+  else{
+    treasure.src = "";
+    return "";
+  }
 }
 
 giveLocation();
