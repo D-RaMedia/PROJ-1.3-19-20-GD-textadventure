@@ -1,5 +1,5 @@
 ## MaQuest
-gamedeveloper :[jouw naam]
+gamedeveloper :[Diego Ramon]
 
 ### Korte omschrijving van de game
 ...
