@@ -8,7 +8,7 @@ gamedeveloper :[Diego Ramon]
 #### Producten Werkproces
 | Product  | Link |
 | ------ |  ------ |
-| Link naar live demo| [LiveDemo]
+| Link naar live demo| http://29244.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/scr/PROJ-1.3-19-20-GD-textadventure/
 | frontend ontwerpen voor computer en smartpnone (pdf) | [Design]
 | Plattegrond van jouw labyrinth            | [Map]
 |<img width=500/>|<img width=300/>|
